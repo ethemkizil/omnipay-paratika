@@ -2,11 +2,6 @@
 
 **Paratika (Asseco) (Akbank, TEB, Halkbank, Finansbank, İş Bankası, Şekerbank, Vakıfbank ) gateway for Omnipay payment processing library**
 
-[![Latest Stable Version](https://poser.pugx.org/yasinkuyu/omnipay-paratika/v/stable)](https://packagist.org/packages/yasinkuyu/omnipay-paratika) 
-[![Total Downloads](https://poser.pugx.org/yasinkuyu/omnipay-paratika/downloads)](https://packagist.org/packages/yasinkuyu/omnipay-paratika) 
-[![Latest Unstable Version](https://poser.pugx.org/yasinkuyu/omnipay-paratika/v/unstable)](https://packagist.org/packages/yasinkuyu/omnipay-paratika) 
-[![License](https://poser.pugx.org/yasinkuyu/omnipay-paratika/license)](https://packagist.org/packages/yasinkuyu/omnipay-paratika)
-
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements Paratika (Turkish Payment Gateways) support for Omnipay.
 
@@ -17,7 +12,7 @@ Akbank, TEB, Halkbank, Finansbank, İş Bankası, Şekerbank ve Vakıfbank taksi
 
 ## Installation
 
-    composer require yasinkuyu/omnipay-paratika:~2.0
+    composer require ethemkizil/omnipay-paratika
 
 ## Basic Usage
 
@@ -53,7 +48,7 @@ repository.
 
 			$gateway = Omnipay::create('Paratika');
 			$gateway->setMerchant('10000000');
-			$gateway->setMerchantUser('test@yasinkuyu.net');
+			$gateway->setMerchantUser('test@test.net');
 			$gateway->setMerchantPassword('Paratika123');
 			$gateway->setSecretKey('QOClasdJUuDDWasdasdasd');
 			$gateway->setBank('ISBANK');
@@ -69,7 +64,7 @@ repository.
 			    'expiryYear'    => '2020',
 			    'cvv'           => '000',
 
-			    'email'         => 'info@insya.com',
+			    'email'         => 'info@test.com',
 			    'firstname'     => 'Insya',
 			    'lastname'      => 'Bilisim',
 			    'phone'         => '95555050505',
@@ -129,51 +124,3 @@ repository.
 			} catch (\Exception $e) {
 			    echo $e->getMessage();
 			}
-
-## NestPay (EST)
-(İş Bankası, Akbank, Finansbank, Denizbank, Kuveytturk, Halkbank, Anadolubank, ING Bank, Citibank, Cardplus) gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-nestpay
-
-## Posnet
-Posnet (Yapı Kredi, Vakıfbank, Anadolubank) gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-posnet
-
-## İyzico
-Iyzico gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-iyzico
-
-## GVP (Granti Sanal Pos)
-Gvp (Garanti, Denizbank, TEB, ING, Şekerbank, TFKB) gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-gvp
-
-## BKM Express
-BKM Express gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-bkm
-
-
-## Composer Installation
-
-Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply add it
-to your `composer.json` file:
-
-```json
-{
-    "require": {
-        "yasinkuyu/omnipay-paratika": "~2.0"
-    }
-}
-```
-
-And run composer to update your dependencies:
-
-    $ curl -s http://getcomposer.org/installer | php
-    $ php composer.phar update
-
-
-## Support
-
-If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/yasinkuyu/omnipay-paratika/issues),
-or better yet, fork the library and submit a pull request.
-
-## Roadmap
- 
