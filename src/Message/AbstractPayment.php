@@ -119,7 +119,7 @@ abstract class AbstractPayment extends AbstractRequest
 
         // MOTO/3D için
         // Kredi kartı bilgileri
-        $data['cardOwner']              = $this->getCard()->getFirstName() . " " . $this->getCard()->getLastName();
+        $data['cardOwner']              = $this->getCard()["holderName"];
         $data['pan']                    = $this->getCard()->getNumber();
         $data['expiryYear']             = $this->getCard()->getExpiryDate('Y');
         $data['expiryMonth']            = $this->getCard()->getExpiryDate('m');
