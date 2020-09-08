@@ -93,7 +93,7 @@ abstract class AbstractPayment extends AbstractRequest
         $data['CUSTOMEREMAIL']          = $this->getCard()->getEmail();
         $data['CUSTOMERIP']             = $_SERVER['REMOTE_ADDR'];  
         $data['CUSTOMERUSERAGENT']      = $_SERVER['HTTP_USER_AGENT'];
-        $data['NAMEONCARD']             = $this->getCard()["holderName"];
+        $data['NAMEONCARD']             = $this->getCard()->getBillingFirstName();
         $data['CUSTOMERPHONE']          = $this->getCard()->getBillingPhone();
 
         // Fatura bilgileri
@@ -119,7 +119,7 @@ abstract class AbstractPayment extends AbstractRequest
 
         // MOTO/3D için
         // Kredi kartı bilgileri
-        $data['cardOwner']              = $this->getCard()["holderName"];
+        $data['cardOwner']              = $this->getCard()->getBillingFirstName();
         $data['pan']                    = $this->getCard()->getNumber();
         $data['expiryYear']             = $this->getCard()->getExpiryDate('Y');
         $data['expiryMonth']            = $this->getCard()->getExpiryDate('m');
