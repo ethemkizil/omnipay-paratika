@@ -93,7 +93,7 @@ abstract class AbstractPayment extends AbstractRequest
         $data['CUSTOMEREMAIL']          = $this->getCard()->getEmail();
         $data['CUSTOMERIP']             = $_SERVER['REMOTE_ADDR'];  
         $data['CUSTOMERUSERAGENT']      = $_SERVER['HTTP_USER_AGENT'];
-        $data['NAMEONCARD']             = $this->getCard()->getFirstName() . " " . $this->getCard()->getLastName();
+        $data['NAMEONCARD']             = $this->getCard()["holderName"];
         $data['CUSTOMERPHONE']          = $this->getCard()->getBillingPhone();
 
         // Fatura bilgileri
